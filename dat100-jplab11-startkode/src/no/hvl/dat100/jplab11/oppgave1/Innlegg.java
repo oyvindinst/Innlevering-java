@@ -21,7 +21,7 @@ public abstract class Innlegg {
 		this.id=id;
 		this.bruker=bruker;
 		this.dato=dato;
-		likes=0;
+		this.likes=0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
@@ -63,12 +63,16 @@ public abstract class Innlegg {
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		
+	likes++;
 	}
-	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		
+if (innlegg.getId() == id) {
+	return true;
+}else{return false;
+	
+}
 	}
 	
 	@Override

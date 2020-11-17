@@ -6,41 +6,64 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 public class Blogg {
 
 	// TODO: objektvariable 
+	
+private Innlegg[] array;
+private int nesteledig;
 
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		array = new Innlegg[20];
 	}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		array = new Innlegg[lengde];
+		nesteledig=0;
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		return nesteledig;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
+		return array;
 
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		int indeks = -1;
+		for (int i = 0; i < nesteledig; i++) {
+			if (array[i].erLik(innlegg)) {
+				
+				indeks=i;
+			}
+		}
+		return indeks;
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < nesteledig; i++) {
+			if (array[i] != null && (array[i].erLik(innlegg))) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		if (nesteledig < array.length -1) {	
+			return true;
+		}
+		return false;
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		if(ledigPlass() == true) {
+			array[nesteledig] = innlegg;
+			nesteledig++;
+		}
 	}
 	
 	public String toString() {
