@@ -51,7 +51,7 @@ private int nesteledig;
 
 	public boolean ledigPlass() {
 		
-		for (int i = 0; i < innleggstabell.length-1; i++) {	
+		for (int i = 0; i < innleggstabell.length; i++) {	
 			if (innleggstabell[i] == null) {
 				return true;
 			}
